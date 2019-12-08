@@ -1,0 +1,2 @@
+SUBSYSTEM=="input", ACTION=="add", ATTRS{uniq}=="08FF20140315", OWNER="bram"
+

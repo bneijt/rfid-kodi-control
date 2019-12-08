@@ -1,7 +1,7 @@
 name:                rfid-kodi-control
 version:             0.1.0.0
 github:              "bneijt/rfid-kodi-control"
-license:             GPL3
+license:             GPL-3
 author:              "Bram Neijt"
 maintainer:          "bram@neijt.nl"
 copyright:           "2019 Bram Neijt"
@@ -29,15 +29,20 @@ library:
   - req
   - bytestring
   - yaml
-  
+  - aeson
+
+
 executables:
   rfid-kodi-control-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
+    - -static
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    cc-options: -static
+    # ld-options: -static -pthread
     dependencies:
     - rfid-kodi-control
     - yaml
@@ -46,6 +51,7 @@ executables:
     - aeson
     - bytestring
     - text
+    - modern-uri
 
 tests:
   rfid-kodi-control-test:

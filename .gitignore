@@ -1,3 +1,4 @@
 .stack-work/
 rfid-kodi-control.cabal
 *~
+/rfid-kodi.yaml

@@ -12,29 +12,35 @@ import Control.Monad.IO.Class
 import Data.Aeson
 import Network.HTTP.Req
 import qualified Data.ByteString as B
-import Data.Text as T
+import qualified Data.Text as T
 import qualified Data.ByteString.Char8 as C
 import Data.Maybe (fromJust)
+import Kodi
+import Text.URI (URI)
+import qualified Text.URI as URI
 
-callKodi :: Text -> QueryParameters -> IO ()
-callKodi kodiHost params = runReq defaultHttpConfig $ do
-  let requestBody = fromJust $ Map.lookup "request" params
-  r <- req POST
-    (http kodiHost /: "jsonrpc")
-    (ReqBodyBs (C.pack requestBody)) 
-    bsResponse 
-    mempty 
-  liftIO $ print (responseBody r :: B.ByteString)
+callKodi :: T.Text -> String -> IO ()
+callKodi kodiHost playUrl = do
+  uri <- URI.mkURI kodiHost
+  let location = fromJust $ useHttpURI uri
+  -- print location
+  runReq defaultHttpConfig $ do
+    r <- req POST
+      (fst location)
+      (ReqBodyJson (playerOpen playUrl)) 
+      bsResponse 
+      (snd location) 
+    liftIO $ print (responseBody r :: B.ByteString)
 
 
 action :: Configuration -> String -> IO ()
-action config action = do
-    let request = Map.lookup action (actions config)
-    case request of
-        Nothing -> putStrLn ("Action not found: " ++ action)
-        Just parameters -> callKodi (T.pack $ kodi config) parameters
+action config actionName = do
+    case Map.lookup actionName (actions config) of
+        Nothing -> putStrLn ("Action not found in configuration: " ++ actionName)
+        Just playUrl -> callKodi (T.pack $ kodi config) playUrl
 
 main = do
     config <- loadConfiguration
+    putStrLn $ "Loaded " ++ show (length (actions config)) ++ " actions from configuration"
     openAndReadFrom (device config) (action config)
 

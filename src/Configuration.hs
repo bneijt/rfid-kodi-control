@@ -1,16 +1,14 @@
 {-# LANGUAGE OverloadedStrings, DeriveGeneric #-}
 module Configuration
     ( loadConfiguration,
-        Configuration(..),
-        QueryParameters
+        Configuration(..)
     ) where
 
 import GHC.Generics
 import Data.Yaml
 import qualified Data.Map.Strict as Map
 
-type QueryParameters = Map.Map String String
-type Actions = Map.Map String QueryParameters
+type Actions = Map.Map String String
 data Configuration = Configuration {
     device :: String,
     kodi :: String,

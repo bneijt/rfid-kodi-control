@@ -1,9 +1,0 @@
----
-device: /dev/input/by-id/usb-Sycreader_RFID_Technology_Co.__Ltd_SYC_ID_IC_USB_Reader_08FF20140315-event-kbd
-kodi: 192.168.62.6
-actions:
-  0607824780:
-      request: '{"jsonrpc":"2.0","id":"1","method":"Player.Open","params":{"item":{"file":"smb://192.168.62.5/Public/Bob de bouwer/CD1.mp3"}}}'
-  0604554412:
-      request: '{"jsonrpc":"2.0","id":"1","method":"Player.Open","params":{"item":{"file":"smb://192.168.62.5/Public/liedjes/Sinterklaas.mp4"}}}'
-

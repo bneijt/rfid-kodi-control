@@ -1,0 +1,11 @@
+---
+device: /dev/input/by-id/usb-Sycreader_RFID_Technology_Co.__Ltd_SYC_ID_IC_USB_Reader_08FF20140315-event-kbd
+kodi: "http://127.0.0.1:8080/jsonrpc"
+actions:
+    #Talk by Alan Kay
+    "0607824780": "http://gw.ipfs.video/ipfs/QmawxGDUERBSJpyosS4KqiDCHSBwPihoGuDLw8bYrE2u6f"
+    #Blender video
+    "0609784460": "http://gw.ipfs.video/ipfs/QmaNhV3gWt9TuDpWakUsBDSZw3CuNjur1YXqHV7zxzZrAZ"
+
+
+
