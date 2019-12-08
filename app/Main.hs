@@ -6,8 +6,7 @@ import Configuration
 import GHC.Generics
 -- import Data.Yaml
 import qualified Data.Map.Strict as Map
-
-
+import System.IO
 import Control.Monad.IO.Class
 import Data.Aeson
 import Network.HTTP.Req
@@ -36,7 +35,9 @@ callKodi kodiHost playUrl = do
 action :: Configuration -> String -> IO ()
 action config actionName = do
     case Map.lookup actionName (actions config) of
-        Nothing -> putStrLn ("Action not found in configuration: " ++ actionName)
+        Nothing -> do
+          putStrLn ("Action not found in configuration: " ++ actionName)
+          hFlush stdout
         Just playUrl -> callKodi (T.pack $ kodi config) playUrl
 
 main = do
