@@ -6,7 +6,8 @@ User=bram
 Group=bram
 WorkingDirectory=/home/bram/rfid-kodi-control
 ExecStart=/home/bram/rfid-kodi-control/rfid-kodi-control-exe
-Restart=on-failure
+Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
