@@ -52,6 +52,7 @@ executables:
     - bytestring
     - text
     - modern-uri
+    - random
 
 tests:
   rfid-kodi-control-test:

@@ -40,7 +40,8 @@ to build the program.
 Step 3. Configure the application
 ---------
 
-Configuration is done using the `rdif-kodi.yaml`, you can start with `mv rfid-kodi-example.yaml rfid-kodi.yaml` to get a template, see [rfid-kodi-example.yaml](rfid-kodi-example.yaml)
+Configuration is done using the `rdif-kodi.yaml`, you can start with `mv rfid-kodi-example.yaml rfid-kodi.yaml` to get a template, see [rfid-kodi-example.yaml](rfid-kodi-example.yaml).
+Each card number maps to a list of options to play. Every time a card is scanned it will randomly select an element from the list.
 
 Step 4. Run the application
 ----------

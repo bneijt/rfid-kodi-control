@@ -17,6 +17,7 @@ import Data.Maybe (fromJust)
 import Kodi
 import Text.URI (URI)
 import qualified Text.URI as URI
+import System.Random (randomRIO)
 
 callKodi :: T.Text -> String -> IO ()
 callKodi kodiHost playUrl = do
@@ -31,14 +32,18 @@ callKodi kodiHost playUrl = do
       (snd location) 
     liftIO $ print (responseBody r :: B.ByteString)
 
+randomPick :: [a] -> IO a
+randomPick l = (l !!) <$> randomRIO (0, length l - 1)
 
 action :: Configuration -> String -> IO ()
-action config actionName = do
+action config actionName =
     case Map.lookup actionName (actions config) of
         Nothing -> do
           putStrLn ("Action not found in configuration: " ++ actionName)
           hFlush stdout
-        Just playUrl -> callKodi (T.pack $ kodi config) playUrl
+        Just playUrls -> do
+          playUrl <- randomPick playUrls
+          callKodi (T.pack $ kodi config) playUrl
 
 main = do
     config <- loadConfiguration
