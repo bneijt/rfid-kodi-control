@@ -24,7 +24,7 @@ dependencies:
 library:
   source-dirs: src
   dependencies:
-  - evdev
+  - evdev >= 1.2.0.0
   - containers
   - req
   - bytestring

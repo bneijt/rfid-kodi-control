@@ -40,8 +40,11 @@ packages:
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
 #
 extra-deps:
-- git: /home/bram/program/os/evdev
-  commit: 9eaec342b707c15a816bdc785319c8c6692e1158
+- evdev-1.2.0.0@sha256:98aa9121be2b3db1042c35baa83ad750286e1721865c2fbfcf8ba554f9de3ad3,2297
+- paths-0.2.0.0@sha256:b550399f0d1181a00221931255c48d72d6eaa8301056afcc9f96288c71aab664,2629
+- safe-0.3.18@sha256:6aa17f30b93a39f60e132fca490a3995db43bf32cf868708327a2f4b526c217f,2405
+- streamly-fsnotify-1.0.0.1@sha256:3d6d7956aa4b60f6fc32c27d073fc1777d53b2b0f4eaf3b1ca3851f83758be17,1440
+
 # Override default flag values for local packages and extra-deps
 # flags: {}
 
