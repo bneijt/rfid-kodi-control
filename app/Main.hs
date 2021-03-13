@@ -19,15 +19,17 @@ import Text.URI (URI)
 import qualified Text.URI as URI
 import System.Random (randomRIO)
 
-callKodi :: T.Text -> String -> IO ()
+callKodi :: T.Text -> T.Text -> IO ()
 callKodi kodiHost playUrl = do
   uri <- URI.mkURI kodiHost
+  let reqBody = if T.isSuffixOf "/" playUrl then playerOpenDirectory playUrl else playerOpen playUrl
   let location = fromJust $ useHttpURI uri
+
   -- print location
   runReq defaultHttpConfig $ do
     r <- req POST
       (fst location)
-      (ReqBodyJson (playerOpen playUrl)) 
+      (ReqBodyJson reqBody) 
       bsResponse 
       (snd location) 
     liftIO $ print (responseBody r :: B.ByteString)
@@ -43,7 +45,7 @@ action config actionName =
           hFlush stdout
         Just playUrls -> do
           playUrl <- randomPick playUrls
-          callKodi (T.pack $ kodi config) playUrl
+          callKodi (T.pack $ kodi config) (T.pack  playUrl)
 
 main = do
     config <- loadConfiguration
