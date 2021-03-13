@@ -17,7 +17,9 @@
 #
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
-resolver: nightly-2019-11-29
+# resolver: nightly-2019-11-29
+resolver:
+  url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/17/5.yaml
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -40,10 +42,8 @@ packages:
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
 #
 extra-deps:
-- evdev-1.2.0.0@sha256:98aa9121be2b3db1042c35baa83ad750286e1721865c2fbfcf8ba554f9de3ad3,2297
-- paths-0.2.0.0@sha256:b550399f0d1181a00221931255c48d72d6eaa8301056afcc9f96288c71aab664,2629
-- safe-0.3.18@sha256:6aa17f30b93a39f60e132fca490a3995db43bf32cf868708327a2f4b526c217f,2405
-- streamly-fsnotify-1.0.0.1@sha256:3d6d7956aa4b60f6fc32c27d073fc1777d53b2b0f4eaf3b1ca3851f83758be17,1440
+- evdev-2.1.0@sha256:4789773ca40953bb94afb3e79574c2a6fbb24f1ce2aae3a768cbabbb7e48c51b,1922
+- filepath-bytestring-1.4.2.1.6@sha256:77e1c914b11da3c8b8df61e43a457339dd86dbc4c0ec86973ba178057bfe4fa2,2493
 
 # Override default flag values for local packages and extra-deps
 # flags: {}

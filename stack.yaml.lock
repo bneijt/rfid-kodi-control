@@ -3,38 +3,25 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages:
-- completed:
-    hackage: evdev-1.2.0.0@sha256:98aa9121be2b3db1042c35baa83ad750286e1721865c2fbfcf8ba554f9de3ad3,2297
-    pantry-tree:
-      size: 487
-      sha256: 15890012fa7f68c133d26fa38c6c9abdf32e7cf68a239d7056fb0c30e311ab32
-  original:
-    hackage: evdev-1.2.0.0@sha256:98aa9121be2b3db1042c35baa83ad750286e1721865c2fbfcf8ba554f9de3ad3,2297
-- completed:
-    hackage: paths-0.2.0.0@sha256:b550399f0d1181a00221931255c48d72d6eaa8301056afcc9f96288c71aab664,2629
-    pantry-tree:
-      size: 732
-      sha256: 775674b5c4b1431aa855b1966abbd59d64da87e8f05fb9bb0d782baca10a470d
-  original:
-    hackage: paths-0.2.0.0@sha256:b550399f0d1181a00221931255c48d72d6eaa8301056afcc9f96288c71aab664,2629
-- completed:
-    hackage: safe-0.3.18@sha256:6aa17f30b93a39f60e132fca490a3995db43bf32cf868708327a2f4b526c217f,2405
-    pantry-tree:
-      size: 564
-      sha256: 2f2805dc3e1414378eca6ca0419858ff0b844062a2d1d38f55f8e1cb3abf9d38
-  original:
-    hackage: safe-0.3.18@sha256:6aa17f30b93a39f60e132fca490a3995db43bf32cf868708327a2f4b526c217f,2405
-- completed:
-    hackage: streamly-fsnotify-1.0.0.1@sha256:3d6d7956aa4b60f6fc32c27d073fc1777d53b2b0f4eaf3b1ca3851f83758be17,1440
-    pantry-tree:
-      size: 333
-      sha256: f7eec6118012fedc1752db4d848bd97f63989ff79c0e35d9ab25bbe148551882
-  original:
-    hackage: streamly-fsnotify-1.0.0.1@sha256:3d6d7956aa4b60f6fc32c27d073fc1777d53b2b0f4eaf3b1ca3851f83758be17,1440
 snapshots:
-- completed:
-    size: 434661
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/nightly/2019/11/29.yaml
-    sha256: 9edba401b588c0b8359262043b51f0bd33e2334802f0a1467eb660a23601eaf6
-  original: nightly-2019-11-29
+- original:
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/17/5.yaml
+  completed:
+    sha256: 78e8ebabf11406261abbc95b44f240acf71802630b368888f6d758de7fc3a2f7
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/17/5.yaml
+    size: 565266
+packages:
+- original:
+    hackage: evdev-2.1.0@sha256:4789773ca40953bb94afb3e79574c2a6fbb24f1ce2aae3a768cbabbb7e48c51b,1922
+  completed:
+    pantry-tree:
+      sha256: 012627620fb5e7a223a861da59e179bea9a6ac244fbda132203d22e56238fa71
+      size: 604
+    hackage: evdev-2.1.0@sha256:4789773ca40953bb94afb3e79574c2a6fbb24f1ce2aae3a768cbabbb7e48c51b,1922
+- original:
+    hackage: filepath-bytestring-1.4.2.1.6@sha256:77e1c914b11da3c8b8df61e43a457339dd86dbc4c0ec86973ba178057bfe4fa2,2493
+  completed:
+    pantry-tree:
+      sha256: 9e209bea77e690aee4e317c8708f1ccb16dae39bcbbd3927d858d4b6238b5bc0
+      size: 821
+    hackage: filepath-bytestring-1.4.2.1.6@sha256:77e1c914b11da3c8b8df61e43a457339dd86dbc4c0ec86973ba178057bfe4fa2,2493

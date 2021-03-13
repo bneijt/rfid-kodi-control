@@ -12,9 +12,9 @@ import qualified Data.ByteString.Char8 as C
 
 nextKey :: Device -> IO Key
 nextKey device = do
-    event <- nextEvent device defaultReadFlags
+    event <- nextEvent device
     case event of
-        KeyEvent key Pressed -> return key
+        Event (KeyEvent key Pressed) _ -> return key
         _ -> nextKey device
 
 represent :: Key -> String
@@ -40,7 +40,7 @@ collectLine device buffer = do
 
 useDevice :: Device -> (String -> IO()) -> IO()
 useDevice device codeHandler = do
-    event <- nextEvent device defaultReadFlags
+    event <- nextEvent device
     line <- collectLine device ""
     codeHandler line
     useDevice device codeHandler
