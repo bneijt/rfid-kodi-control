@@ -65,3 +65,6 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - rfid-kodi-control
+    - hspec
+    - text
+    - aeson
